@@ -138,5 +138,75 @@
                     "mode" : 2,
                     "control" : 0
                     }
+    },
+    "bicopterbasic_spinning": {
+        "feedbackPD" : { "roll" : 0,
+                        "pitch" : 0,
+                        "yaw" : 0,
+                        "x" : 0,
+                        "y" : 0,
+                        "z" : 1,
+                        "rotation" : 0,
+
+                        "Croll" : 0.5,
+                        "Cpitch" : 0, 
+                        "Cyaw" : 0.07,
+                        "Cx" : 0.7,
+                        "Cy" : 0,
+                        "Cz" : 3,
+                        "Cabsz" : 1,
+
+                        "kproll" : 0,
+                        "kdroll" : 0 ,
+                        "kppitch" : 0,
+                        "kdpitch" : 0,
+                        "kpyaw" : 10,
+                        "kdyaw" : -120,
+
+                        "kpx" : 0,
+                        "kdx" : 0,
+                        "kpy" : 0,
+                        "kdy" : 0,
+                        "kpz" : 1.2,
+                        "kdz" : 4,
+                        "kiz" : 0,
+
+                        "integral_dt" : 0,
+                        "z_int_low" : 0,
+                        "z_int_high" : 200,
+
+                        "lx" : 0.15,
+                        "pitchSign" : 1,
+                        "pitchOffset" : -3.2816,
+
+                        "servo1offset" : 0.45,
+                        "servo2offset" : -0.1
+                        },
+        "weights": { "eulerGamma" : 0,
+                    "rollRateGamma" : 0.7,
+                    "yawRateGamma" : 0.975,
+                    "pitchRateGamma" : 0.7,
+                    "zGamma" : 0.5,
+                    "vzGamma" : 0.975
+                    },
+        "initflags": {
+                    "_comment": "flags to be used in the init", 
+                    "_comment": "-bool verbose: allows some debug print statments",
+                    "_comment": "-bool sensors: enables or disables the sensorsuite package: if false all values will be 0, and sensorReady =false in the sensor ",
+                    "_comment":"-bool UDP: starts up the UDP connection such that other UDP functions will be enabled",
+                    "_comment":"-int motor_type: determines if you are using brushless or brushed motors: 0 = brushless, 1 = brushed;",
+                    "_comment":"-int mode: sets which controller to listen to: 0 = UDP, 1 = IBUS,2 = espnow, -1 = None;",
+                    "_comment":"-int control: sets which type of controller to use: 0 = bicopter, 1 = spinning(TODO),2 = s-blimp, -1 = None;",
+                    "verbose" : 0,
+                    "sensors" : 0,
+                    "escarm" : 0,
+                    "UDP" : 0,
+                    "Ibus" : 0,
+                    "ESPNOW" : 1,
+                    "PORT" : 1345,
+                    "motor_type" : 1,
+                    "mode" : 2,
+                    "control" : 0
+                    }
     }
 }

@@ -55,7 +55,7 @@ class JoystickHandler:
             self._update_button_states(i)
         
         # Update axis values with a dead-zone of 0.1
-        axes = [('right_vertical', 3), ('right_horizontal', 2), ('left_horizontal', 0), ('left_vertical', 1)]
+        axes = [('right_vertical', 4), ('right_horizontal', 3), ('left_horizontal', 0), ('left_vertical', 1)]
         for axis, idx in axes:
             val = self.joystick.get_axis(idx)
             setattr(self, axis, val if abs(val) > 0.1 else 0)
@@ -68,7 +68,8 @@ class JoystickHandler:
         self.fx = -1* self.right_vertical
         self.fz = self.fz + -1* self.left_vertical * dt if self.b_state else 0
         self.tz = -1* self.right_horizontal
-        return [int(self.b_state), self.fx, self.fy, self.fz, self.tx, self.ty, self.tz, 0, 0, 0, 0, 0, 0]
+        return [int(self.b_state), self.fx, self.fy, self.fz, self.tx, self.ty, self.tz, int(self.x_state), int(self.rb_state), 0, 0, 0, 0]
+
 
     def get_sblimp_controls(self):
         """Return controls for sblimp."""
